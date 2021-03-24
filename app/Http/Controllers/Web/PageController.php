@@ -11,7 +11,7 @@ class PageController extends Controller
 {
     public function blogJson()
     {
-        return response()->json(Post::get(), 200);
+        return response()->json(Post::paginate(25), 200);
     }
     public function blog()
     {
