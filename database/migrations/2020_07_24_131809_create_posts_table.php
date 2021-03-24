@@ -26,7 +26,7 @@ class CreatePostsTable extends Migration
             $table->string('file_temp', 128)->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')
+            $table->foreign('user_id')->nullable()->references('id')->on('users')
             ->onDelete('cascade')
             ->onUpdate('cascade');
 

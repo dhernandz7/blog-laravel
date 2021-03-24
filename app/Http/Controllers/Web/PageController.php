@@ -9,6 +9,10 @@ use App\Category;
 
 class PageController extends Controller
 {
+    public function blogJson()
+    {
+        return response()->json(Post::get(), 200);
+    }
     public function blog()
     {
     	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
