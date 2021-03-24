@@ -46,6 +46,8 @@ class PostController extends Controller
     {
         $post = Post::create($request->all());
 
+        $path = null;
+        
         if($request->hasFile('file')) {
             $path = $request->file('file')->store('images', 'public');
         }
